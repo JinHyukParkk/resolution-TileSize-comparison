@@ -7,7 +7,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/JinHyukParkk/resolutionOfTiles_Comparison/calculate"
+	"github.com/JinHyukParkk/resolution_tileSize_comparison/calculate"
 )
 
 func main() {
