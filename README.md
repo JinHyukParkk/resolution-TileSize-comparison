@@ -5,6 +5,7 @@
 ### 1. Flag 설명
 * -site : 'naver', 'daum', 'vworld'   .. TileMap의 해당 사이트
 * -location : 해당 지역 이름
+* -type : site가 'vworld'라면 2D or 3D 선택
 #### 1.1 타일 데이터 저장 디렉터리 형식
 * tileData란 디렉터리 안에 naver_[해상도] 별로 저장 되어있어야 하고, 그 안에 [위치] 디렉터리 안에 타일들이 저장되어있어야 합니다.
 ```
