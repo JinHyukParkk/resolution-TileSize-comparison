@@ -26,7 +26,7 @@ func main() {
 	path := "./tileData/"
 	files, err := ioutil.ReadDir(path)
 	check(err)
-	createFilePath := "./result.txt"
+	createFilePath := "./" + *site + "Result.txt"
 	result, err := os.Create(createFilePath)
 	check(err)
 	defer result.Close()
@@ -38,9 +38,9 @@ func main() {
 			out := "###### " + s[0] + " " + *location + " Resolution" + " " + s[1] + "%\r\n"
 			w.WriteString(out)
 			resp := calc.CalcSize(nPath)
-			out = "MaxSize : " + resp[0] + "  FileName : " + resp[1] + "\r\n"
+			out = "MaxSize : " + resp[0] + "\tFileName : " + resp[1] + "\r\n"
 			w.WriteString(out)
-			out = "MinSize : " + resp[2] + "  FileName : " + resp[3] + "\r\n"
+			out = "MinSize : " + resp[2] + "\tFileName : " + resp[3] + "\r\n"
 			w.WriteString(out)
 			out = "AvgSize : " + resp[4] + "\r\n"
 			w.WriteString(out)
