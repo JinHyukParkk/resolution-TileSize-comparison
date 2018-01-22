@@ -42,7 +42,7 @@ func main() {
 			w.WriteString(out)
 			out = "MinSize : " + resp[2] + "  FileName : " + resp[3] + "\r\n"
 			w.WriteString(out)
-			out = "AvgSize : " + resp[4] + "\n"
+			out = "AvgSize : " + resp[4] + "\r\n"
 			w.WriteString(out)
 		}
 	}
