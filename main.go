@@ -35,14 +35,14 @@ func main() {
 		s := strings.Split(f.Name(), "_")
 		nPath := path + f.Name() + "/" + *location
 		if s[0] == *site {
-			out := "###### " + s[0] + " " + *location + " Resolution" + " " + s[1] + "%"
+			out := "###### " + s[0] + " " + *location + " Resolution" + " " + s[1] + "%\n"
 			w.WriteString(out)
 			resp := calc.CalcSize(nPath)
-			out = "MaxSize : " + resp[0] + "  FileName : " + resp[1]
+			out = "MaxSize : " + resp[0] + "  FileName : " + resp[1] + "\n"
 			w.WriteString(out)
-			out = "MinSize : " + resp[2] + "  FileName : " + resp[3]
+			out = "MinSize : " + resp[2] + "  FileName : " + resp[3] + "\n"
 			w.WriteString(out)
-			out = "AvgSize : " + resp[4]
+			out = "AvgSize : " + resp[4] + "\n"
 			w.WriteString(out)
 		}
 	}
