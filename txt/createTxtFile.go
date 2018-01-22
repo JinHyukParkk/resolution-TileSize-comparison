@@ -47,13 +47,13 @@ func CreateTxt(site string, location string) {
 
 		if s[0] == site {
 			if s[0] == "vworld" {
-				lo := "/2D" + location
-				nPath := path + f.Name() + lo
+				lo := "2D" + location
+				nPath := path + f.Name() + "/" + lo
 				Calc(w, site, s, nPath, lo)
 				w.WriteString("\r\n")
-				lo = "/3D" + location
-				nPath = path + f.Name() + lo
-				Calc(w, site, s, nPath, location)
+				lo = "3D" + location
+				nPath = path + f.Name() + "/" + lo
+				Calc(w, site, s, nPath, lo)
 			} else {
 				nPath := path + f.Name() + "/" + location
 				Calc(w, site, s, nPath, location)
