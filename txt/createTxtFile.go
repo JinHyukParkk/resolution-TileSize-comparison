@@ -44,7 +44,6 @@ func CreateTxt(site string, location string) {
 	w := bufio.NewWriter(result)
 	for _, f := range files {
 		s := strings.Split(f.Name(), "_")
-
 		if s[0] == site {
 			if s[0] == "vworld" {
 				lo := "2D" + location
