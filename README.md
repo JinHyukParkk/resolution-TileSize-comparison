@@ -44,4 +44,4 @@
   3. result/[site]_[지역]_Result.txt 라는 텍스트 파일에 결과 저장
 
 ### 3. 사용자 육안으로 타일 확인
-[https://github.com/IngIeoAndSpare/SortingImageDisplay](https://github.com/IngIeoAndSpare/SortingImageDisplay)
+링크 : [https://github.com/IngIeoAndSpare/SortingImageDisplay](https://github.com/IngIeoAndSpare/SortingImageDisplay)
