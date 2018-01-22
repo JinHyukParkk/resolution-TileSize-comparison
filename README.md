@@ -14,12 +14,10 @@
   1. 'resolutionOfTiles_Comparison' 이라는 실행 파일 다운
   2. 터미널 실행
       * ./resolutionOfTiles_Comparison -site [site] -location [지역명]
-  3. xlsx 파일로 저장
+  3. result/[site]_[지역]_Result.txt 라는 텍스트 파일에 결과 저장
 
 #### 2.2. Window 환경
   1. 'resolutionOfTiles_Comparison.exe' 이라는 실행 파일 다운
   2. CMD 관리자 모드로 실행
       * resolutionOfTiles_Comparison.exe -site [site] -location [지역명]
-  3. xlsx 파일로 저장
-
-### 3. Golang 라이브러리로 사용
+  3. result/[site]_[지역]_Result.txt 라는 텍스트 파일에 결과 저장
