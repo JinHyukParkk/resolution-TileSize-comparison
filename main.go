@@ -1,35 +1,50 @@
 package main
 
 import (
+	"bufio"
 	"flag"
-	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/JinHyukParkk/resolution_tileSize_comparison/calculate"
 )
 
-func main() {
+func check(e error) {
+	if e != nil {
+		log.Fatal(e)
+		panic(e)
+	}
+}
 
+func main() {
 	site := flag.String("site", "naver", "Site Name")
 	location := flag.String("ln", "독도", "Location Name")
 	flag.Parse()
 
 	path := "./tileData/"
 	files, err := ioutil.ReadDir(path)
-	if err != nil {
-		log.Fatal(err)
-	}
+	check(err)
+	createFilePath := "./result.txt"
+	result, err := os.Create(createFilePath)
+	check(err)
+	defer result.Close()
+	w := bufio.NewWriter(result)
 	for _, f := range files {
 		s := strings.Split(f.Name(), "_")
 		nPath := path + f.Name() + "/" + *location
 		if s[0] == *site {
-			fmt.Println("######", s[0], *location, "Resolution", s[1]+"%")
+			out := "###### " + s[0] + " " + *location + " Resolution" + " " + s[1] + "%"
+			w.WriteString(out)
 			resp := calc.CalcSize(nPath)
-			fmt.Println("MaxSize :", resp[0]+"  FileName :", resp[1])
-			fmt.Println("MinSize :", resp[2]+"  FileName :", resp[3])
-			fmt.Println("AvgSize :", resp[4])
+			out = "MaxSize : " + resp[0] + "  FileName : " + resp[1]
+			w.WriteString(out)
+			out = "MinSize : " + resp[2] + "  FileName : " + resp[3]
+			w.WriteString(out)
+			out = "AvgSize : " + resp[4]
+			w.WriteString(out)
 		}
 	}
+	w.Flush()
 }
