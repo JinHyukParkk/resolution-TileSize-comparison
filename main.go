@@ -14,11 +14,11 @@ func check(e error) {
 	}
 }
 func main() {
-	site := flag.String("site", "naver", "Site Name")
-	location := flag.String("ln", "독도", "Location Name")
+	site := flag.String("site", "1", "Site Name")
+	location := flag.String("ln", "1", "Location Name")
 	flag.Parse()
 	log.Println("--------Start--------")
-	if site != nil && location != nil {
+	if *site != "1" && *location != "1" {
 		txt.CreateTxt(*site, *location)
 	} else {
 		log.Println("site와 ln Flag를 입력해주세요.")
