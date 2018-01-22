@@ -36,7 +36,7 @@ func main() {
 	files, err := ioutil.ReadDir(path)
 	check(err)
 	CreateDirIfNotExist("./result")
-	createFilePath := "./result/" + *site + "Result.txt"
+	createFilePath := "./result/" + *site + *location + "Result.txt"
 	result, err := os.Create(createFilePath)
 	check(err)
 	defer result.Close()
