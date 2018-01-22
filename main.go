@@ -13,7 +13,7 @@ import (
 func main() {
 
 	site := flag.String("site", "naver", "Site Name")
-	location := flag.String("name", "독도", "Location Name")
+	location := flag.String("ln", "독도", "Location Name")
 	flag.Parse()
 
 	path := "./tileData/"
