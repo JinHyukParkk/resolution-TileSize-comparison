@@ -53,6 +53,7 @@ func CreateTxt(site string, location string) {
 				lo = "3D" + location
 				nPath = path + f.Name() + "/" + lo
 				Calc(w, site, s, nPath, lo)
+				w.WriteString("\r\n")
 			} else {
 				nPath := path + f.Name() + "/" + location
 				Calc(w, site, s, nPath, location)
