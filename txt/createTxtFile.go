@@ -36,7 +36,12 @@ func CreateTxt(site string, location string, t string) {
 	files, err := ioutil.ReadDir(path)
 	check(err)
 	CreateDirIfNotExist("./result")
-	createFilePath := "./result/" + site + "_" + location + "_Result.txt"
+	var createFilePath string
+	if site == "vworld" {
+		createFilePath = "./result/" + site + "_" + t + location + "_Result.txt"
+	} else {
+		createFilePath = "./result/" + site + "_" + location + "_Result.txt"
+	}
 	log.Println("###### Create txt -", createFilePath)
 	result, err := os.Create(createFilePath)
 	check(err)
