@@ -23,6 +23,7 @@ func check(e error) {
 }
 func CreateDirIfNotExist(dir string) {
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		log.Println("###### Create result directory ")
 		err = os.MkdirAll(dir, 0755)
 		if err != nil {
 			panic(err)
@@ -31,11 +32,13 @@ func CreateDirIfNotExist(dir string) {
 }
 
 func CreateTxt(site string, location string) {
+
 	path := "./tileData/"
 	files, err := ioutil.ReadDir(path)
 	check(err)
 	CreateDirIfNotExist("./result")
-	createFilePath := "./result/" + site + location + "Result.txt"
+	createFilePath := "./result/" + site + "_" + location + "_Result.txt"
+	log.Println("###### Create txt -", createFilePath)
 	result, err := os.Create(createFilePath)
 	check(err)
 	defer result.Close()
@@ -56,4 +59,5 @@ func CreateTxt(site string, location string) {
 		}
 	}
 	w.Flush()
+	log.Println("###### Complete")
 }
