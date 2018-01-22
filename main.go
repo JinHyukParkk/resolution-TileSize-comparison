@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -38,11 +39,11 @@ func main() {
 			out := "###### " + s[0] + " " + *location + " Resolution" + " " + s[1] + "%\r\n"
 			w.WriteString(out)
 			resp := calc.CalcSize(nPath)
-			out = "MaxSize : " + resp[0] + "\tFileName : " + resp[1] + "\r\n"
+			out = fmt.Sprintf("MaxSize : %-6s\tFileName : %-13s\r\n", resp[0], resp[1])
 			w.WriteString(out)
-			out = "MinSize : " + resp[2] + "\tFileName : " + resp[3] + "\r\n"
+			out = fmt.Sprintf("MinSize : %-6s\tFileName : %-13s\r\n", resp[2], resp[3])
 			w.WriteString(out)
-			out = "AvgSize : " + resp[4] + "\r\n"
+			out = fmt.Sprintf("AvgSize : %-6s\r\n", resp[4])
 			w.WriteString(out)
 		}
 	}
