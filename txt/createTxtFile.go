@@ -31,9 +31,8 @@ func CreateDirIfNotExist(dir string) {
 	}
 }
 
-func CreateTxt(site string, location string) {
-
-	path := "./tileData/"
+func CreateTxt(site string, location string, resol string) {
+	path := "./Data/tileData" + resol + "/"
 	files, err := ioutil.ReadDir(path)
 	check(err)
 	CreateDirIfNotExist("./result")

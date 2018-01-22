@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"log"
-	"os"
 
 	"github.com/JinHyukParkk/resolution_tileSize_comparison/txt"
 )
@@ -14,21 +13,15 @@ func check(e error) {
 		panic(e)
 	}
 }
-func CreateDirIfNotExist(dir string) {
-	if _, err := os.Stat(dir); os.IsNotExist(err) {
-		err = os.MkdirAll(dir, 0755)
-		if err != nil {
-			panic(err)
-		}
-	}
-}
-
 func main() {
 	site := flag.String("site", "naver", "Site Name")
 	location := flag.String("ln", "독도", "Location Name")
 	flag.Parse()
 	log.Println("--------Start--------")
-	txt.CreateTxt(*site, *location)
+	txt.CreateTxt(*site, *location, "100")
+	txt.CreateTxt(*site, *location, "90")
+	txt.CreateTxt(*site, *location, "80")
+	txt.CreateTxt(*site, *location, "70")
 	log.Println("-------- End --------")
 
 }
