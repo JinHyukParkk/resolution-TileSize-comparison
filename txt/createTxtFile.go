@@ -48,20 +48,20 @@ func CreateTxt(site string, location string) {
 		if s[0] == site {
 			if s[0] == "vworld" {
 				nPath := path + f.Name() + "/2D" + location
-				Calc(*w, site, s, nPath, location)
+				Calc(w, site, s, nPath, location)
 				w.WriteString("\n")
 				nPath = path + f.Name() + "/3D" + location
-				Calc(*w, site, s, nPath, location)
+				Calc(w, site, s, nPath, location)
 			} else {
 				nPath := path + f.Name() + "/" + location
-				Calc(*w, site, s, nPath, location)
+				Calc(w, site, s, nPath, location)
 			}
 		}
 	}
 	w.Flush()
 	log.Println("###### Complete")
 }
-func Calc(w bufio.Writer, site string, s []string, nPath string, location string) {
+func Calc(w *bufio.Writer, site string, s []string, nPath string, location string) {
 	out := "###### " + s[0] + " " + location + " Resolution" + " " + s[1] + "%\r\n"
 	w.WriteString(out)
 	resp := calc.CalcSize(nPath)
