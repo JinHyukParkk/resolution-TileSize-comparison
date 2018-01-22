@@ -18,10 +18,7 @@ func main() {
 	location := flag.String("ln", "독도", "Location Name")
 	flag.Parse()
 	log.Println("--------Start--------")
-	txt.CreateTxt(*site, *location, "100")
-	txt.CreateTxt(*site, *location, "90")
-	txt.CreateTxt(*site, *location, "80")
-	txt.CreateTxt(*site, *location, "70")
+	txt.CreateTxt(*site, *location)
 	log.Println("-------- End --------")
 
 }
