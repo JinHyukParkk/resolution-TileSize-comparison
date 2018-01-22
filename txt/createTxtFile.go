@@ -44,19 +44,31 @@ func CreateTxt(site string, location string) {
 	w := bufio.NewWriter(result)
 	for _, f := range files {
 		s := strings.Split(f.Name(), "_")
-		nPath := path + f.Name() + "/" + location
+
 		if s[0] == site {
-			out := "###### " + s[0] + " " + location + " Resolution" + " " + s[1] + "%\r\n"
-			w.WriteString(out)
-			resp := calc.CalcSize(nPath)
-			out = fmt.Sprintf("MaxSize : %-6s\tFileName : %-13s\r\n", resp[0], resp[1])
-			w.WriteString(out)
-			out = fmt.Sprintf("MinSize : %-6s\tFileName : %-13s\r\n", resp[2], resp[3])
-			w.WriteString(out)
-			out = fmt.Sprintf("AvgSize : %-6s\r\n", resp[4])
-			w.WriteString(out)
+			if s[0] == "vworld" {
+				nPath := path + f.Name() + "/2D" + location
+				Calc(*w, site, s, nPath, location)
+				w.WriteString("\n")
+				nPath = path + f.Name() + "/3D" + location
+				Calc(*w, site, s, nPath, location)
+			} else {
+				nPath := path + f.Name() + "/" + location
+				Calc(*w, site, s, nPath, location)
+			}
 		}
 	}
 	w.Flush()
 	log.Println("###### Complete")
+}
+func Calc(w bufio.Writer, site string, s []string, nPath string, location string) {
+	out := "###### " + s[0] + " " + location + " Resolution" + " " + s[1] + "%\r\n"
+	w.WriteString(out)
+	resp := calc.CalcSize(nPath)
+	out = fmt.Sprintf("MaxSize : %-6s\tFileName : %-13s\r\n", resp[0], resp[1])
+	w.WriteString(out)
+	out = fmt.Sprintf("MinSize : %-6s\tFileName : %-13s\r\n", resp[2], resp[3])
+	w.WriteString(out)
+	out = fmt.Sprintf("AvgSize : %-6s\r\n", resp[4])
+	w.WriteString(out)
 }

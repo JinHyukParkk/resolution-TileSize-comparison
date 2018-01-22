@@ -20,5 +20,8 @@ func main() {
 	log.Println("--------Start--------")
 	txt.CreateTxt(*site, *location)
 	log.Println("-------- End --------")
+}
 
+func test() {
+	txt.CreateTxt("vworld", "독도")
 }
