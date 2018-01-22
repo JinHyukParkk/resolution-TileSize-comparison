@@ -33,4 +33,16 @@ func test() {
 	txt.CreateTxt("vworld", "독도")
 	txt.CreateTxt("vworld", "북한산")
 	txt.CreateTxt("vworld", "설악산")
+
+	txt.CreateTxt("naver", "강남역")
+	txt.CreateTxt("naver", "여의도")
+	txt.CreateTxt("naver", "독도")
+	txt.CreateTxt("naver", "북한산")
+	txt.CreateTxt("naver", "설악산")
+
+	txt.CreateTxt("daum", "강남역")
+	txt.CreateTxt("daum", "여의도")
+	txt.CreateTxt("daum", "독도")
+	txt.CreateTxt("daum", "북한산")
+	txt.CreateTxt("daum", "설악산")
 }
