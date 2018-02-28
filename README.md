@@ -28,7 +28,7 @@
 ```
 
 ### 2. 실행 방법  
-#### 해당 소스 URL
+#### 타일 다운 URL
 [https://github.com/JinHyukParkk/DownloadTile.git](https://github.com/JinHyukParkk/DownloadTile.git)
 
 #### 2.1. 리눅스, Mac OS X  환경
